@@ -45,6 +45,7 @@ function AddTaskMenu({ menuState, setMenuState, buttonRef }) {
             }
         }else{
             alert(e);
+            console.log(e);
         }
     };
 
