@@ -25,14 +25,14 @@ function AddTaskMenu({ menuState, setMenuState, buttonRef }) {
     const menuRefDesc = React.useRef(null);
     const menuRefMobi = React.useRef(null);
     // const date = startDate.split(' ');
-
-    const handleOutsideClick = (e) => {
-        if(e.path !== undefined){
+    const path = event.path() || (event.composedPath && event.composedPath());
+    const handleOutsideClick = () => {
+        if(path !== undefined){
             if (
 
-                !e.path?.includes(menuRefDesc.current) &&
-                !e.path?.includes(buttonRef.current) &&
-                !e.path?.includes(menuRefMobi.current)
+                !path?.includes(menuRefDesc.current) &&
+                !path?.includes(buttonRef.current) &&
+                !path?.includes(menuRefMobi.current)
             ) {
 
                 setMenuState(false);
@@ -44,8 +44,8 @@ function AddTaskMenu({ menuState, setMenuState, buttonRef }) {
                 setVisibleMenu(true);
             }
         }else{
-            alert(e);
-            console.log(e);
+            alert(path);
+            console.log(path);
         }
     };
 
