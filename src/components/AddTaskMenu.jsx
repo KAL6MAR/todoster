@@ -30,7 +30,7 @@ function AddTaskMenu({ menuState, setMenuState, buttonRef }) {
         if(e !== undefined){
             if (
 
-                !e.path?.includes(menuRefDesc.current) &&
+                !e.path.includes(menuRefDesc.current) &&
                 !e.path?.includes(buttonRef.current) &&
                 !e.path?.includes(menuRefMobi.current)
             ) {
@@ -46,7 +46,6 @@ function AddTaskMenu({ menuState, setMenuState, buttonRef }) {
         }else{
             alert(e);
         }
-
     };
 
 
