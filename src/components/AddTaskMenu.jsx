@@ -27,10 +27,10 @@ function AddTaskMenu({ menuState, setMenuState, buttonRef }) {
     // const date = startDate.split(' ');
 
     const handleOutsideClick = (e) => {
-        if(e !== undefined){
+        if(e.path !== undefined){
             if (
 
-                !e.path.includes(menuRefDesc.current) &&
+                !e.path?.includes(menuRefDesc.current) &&
                 !e.path?.includes(buttonRef.current) &&
                 !e.path?.includes(menuRefMobi.current)
             ) {
