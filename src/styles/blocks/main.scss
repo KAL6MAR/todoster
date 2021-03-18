@@ -1,0 +1,12 @@
+@viewport {
+    min-width: 320px;
+}
+
+body {
+    color: $textcolor;
+    height: 100%;
+    overflow: auto;
+    @media (max-width: 480px) {
+        background: $dark-blue;
+    }
+}

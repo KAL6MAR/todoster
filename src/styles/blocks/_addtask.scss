@@ -1,0 +1,226 @@
+.task-menu {
+    &__overlay {
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($dark-blue, 0.8);
+        border-radius: 50px;
+        z-index: 1000000;
+        @media (max-width: 480px) {
+            border-radius: 0;
+        }
+    }
+
+    &__heading {
+        font-size: 2rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+    }
+
+    &__addtask {
+        margin: auto auto;
+        padding: 20px;
+        min-width: 320px;
+        max-width: 600px;
+        min-height: 400px;
+        max-height: 800px;
+        background-color: darken($dark-blue, 0.3);
+        box-sizing: border-box;
+        border-radius: 15px;
+        box-shadow: 8px 8px 30px 0 rgba(34, 60, 80, 0.19);
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 30px;
+
+            label {
+                width: 100%;
+                text-align: center;
+            }
+
+            input {
+                width: 100%;
+                background-color: darken($dark-blue, 0.3);
+                border: none;
+                border-bottom: 1px solid $accent;
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
+
+    &__open {
+        transform: scale(1);
+        opacity: 1;
+        animation: MenuOpenScale 0.2s ease-in-out;
+        @keyframes MenuOpenScale {
+            0% {
+                visibility: hidden;
+                transform: scale(1.2);
+                opacity: 0;
+            }
+            100% {
+                visibility: visible;
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    }
+
+    &__closed {
+        display: none;
+        animation: MenuCloseScale 0.2s ease-in-out;
+        @keyframes MenuCloseScale {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+        }
+    }
+
+    &__overlay-open {
+        opacity: 1;
+        animation: MenuOverlayOpen 0.2s ease-in-out;
+        @keyframes MenuOverlayOpen {
+            0% {
+                visibility: hidden;
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__overlay-closed {
+        animation: MenuOverlayColosed 0.2s ease-in-out;
+        display: none;
+        @keyframes MenuOverlayClosed {
+            0% {
+                visibility: visible;
+                opacity: 1;
+            }
+            100% {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+    }
+    &__button{
+        font-size: 1.5rem;
+        max-width: 15ch!important;
+    }
+}
+
+.add-task {
+    font-size: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 100;
+    background-color: $light-dark-blue;
+    border-radius: 30px 30px 0 0;
+    padding: 0;
+    margin: 0;
+
+    &__mobile {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        min-height: 450px;
+    }
+
+    &__menu-open {
+        display: block;
+        animation: fadeInAddTask 0.2s ease-in-out;
+    }
+
+    &__menu-close {
+        animation: fadeOut 0.2s ease-in-out;
+        animation-fill-mode: forwards;
+        display: none;
+    }
+
+    @keyframes fadeInAddTask {
+        0% {
+            opacity: 0;
+            transform: translateY(10rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(20rem);
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        background: #292b38;
+        border-radius: 30px;
+        min-height: 100px;
+    }
+
+    &__btn-back {
+        position: absolute;
+        left: 15px;
+    }
+
+    &__task-input {
+        display: block;
+        margin: 0 20px;
+        width: calc(100% - 40px);
+        height: 40px;
+        background: #292b38;
+        border: 1px solid darken($light-grey, 33);
+        border-radius: 10px;
+        color: $light-grey;
+        font-size: 1.5em;
+        padding-left: 0.5rem;
+    }
+
+    &__body {
+        margin-top: 30px;
+    }
+
+    &__sub-title {
+        font-size: 1.5rem;
+        margin-left: 20px;
+    }
+
+    &__button {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, 0);
+        max-width: 40%;
+    }
+}

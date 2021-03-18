@@ -1,0 +1,28 @@
+.account{
+  margin-top: 50px;
+  color: $light-grey;
+  font-size: 1.5rem;
+  text-align: center;
+  &-card{
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    min-width: 400px;
+    border-radius: 15px;
+    background-color: $light-dark-blue;
+
+  }
+  &--img{
+    img{
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+  }
+  &--info{
+    margin-top: 35px;
+
+  }
+}
