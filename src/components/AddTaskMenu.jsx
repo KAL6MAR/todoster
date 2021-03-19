@@ -25,7 +25,7 @@ function AddTaskMenu({ menuState, setMenuState, buttonRef }) {
     const menuRefDesc = React.useRef(null);
     const menuRefMobi = React.useRef(null);
     // const date = startDate.split(' ');
-    const path = event.path() || (event.composedPath && event.composedPath());
+    const path = event.path || (event.composedPath && event.composedPath());
     const handleOutsideClick = () => {
         if(path !== undefined){
             if (
